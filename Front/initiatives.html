@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciativas Verdes</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="initiatives.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Iniciativas Verdes</h1>
+    
+    <!-- Botón para mostrar formulario -->
+    <button id="add-initiative-button" class="btn-primary">Añadir Iniciativa</button>
+    
+    <!-- Tabla de Iniciativas -->
+    <table id="initiatives-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Categoría</th>
+          <th>Fecha de Inicio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Las iniciativas serán agregadas dinámicamente -->
+      </tbody>
+    </table>
+    
+    <!-- Formulario para Crear/Editar Iniciativas -->
+    <form id="initiative-form" style="display: none;" class="initiative-card">
+      <h2 id="form-title">Añadir Nueva Iniciativa</h2>
+      <input type="hidden" id="initiative-id">
+      <div>
+        <label for="initiative-title">Título</label>
+        <input type="text" id="initiative-title" placeholder="Título de la iniciativa" required>
+      </div>
+      <div>
+        <label for="initiative-description">Descripción</label>
+        <textarea id="initiative-description" placeholder="Descripción de la iniciativa" rows="4" required></textarea>
+      </div>
+      <div>
+        <label for="initiative-category">Categoría</label>
+        <select id="initiative-category" required>
+          <option value="">Seleccionar categoría</option>
+          <option value="Energía">Energía</option>
+          <option value="Reducción de Residuos">Reducción de Residuos</option>
+          <option value="Naturaleza">Naturaleza</option>
+          <option value="Educación">Educación</option>
+        </select>
+      </div>
+      <div>
+        <label for="initiative-start-date">Fecha de Inicio</label>
+        <input type="date" id="initiative-start-date" required>
+      </div>
+      <div class="form-actions">
+        <button type="button" id="cancel-button" class="btn-secondary">Cancelar</button>
+        <button type="submit" class="btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
