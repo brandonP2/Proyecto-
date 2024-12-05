@@ -180,3 +180,128 @@ form div.incorrect input{
   border: none;
   cursor: pointer;
 }
+
+/* Front/style.css */
+/* Estilos para la tabla */
+#initiatives-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#initiatives-table th,
+#initiatives-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+#initiatives-table th {
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+}
+
+#initiatives-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Estilos para los botones de acción */
+.btn-edit, .btn-delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-delete {
+  background-color: #ff4444;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #7ab379;
+}
+
+.btn-delete:hover {
+  background-color: #ff6666;
+}
+
+/* Estilos para el botón de añadir iniciativa */
+#add-initiative-button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#add-initiative-button:hover {
+  background-color: #7ab379;
+  transform: translateY(-2px);
+}
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.edit-button {
+    color: var(--accent-color);
+}
+
+.edit-button:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.edit-button svg {
+    fill: currentColor;
+}
+
+.delete-button {
+    color: #f06272;
+}
+
+.delete-button:hover {
+    background-color: #f06272;
+    color: white;
+}
+
+.delete-button svg {
+    fill: currentColor;
+}
+
+/* Ajustar el tamaño de los iconos */
+.icon-button svg {
+    width: 20px;
+    height: 20px;
+}

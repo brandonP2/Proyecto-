@@ -8,38 +8,44 @@ document.addEventListener("DOMContentLoaded", () => {
     const cancelButton = document.getElementById("cancel-button");
     const formTitle = document.getElementById("form-title");
 
-    // También actualizar la función loadInitiatives para incluir el token
-const loadInitiatives = async () => {
-        try {
-            const token = localStorage.getItem("token");
-            const response = await fetch(apiUrl, {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            });
+    const loadInitiatives = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            const response = await fetch(apiUrl, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
     
-            if (!response.ok) throw new Error("Error al cargar iniciativas");
-            const data = await response.json();
+            if (!response.ok) throw new Error("Error al cargar iniciativas");
+            const data = await response.json();
     
-            initiativesTable.innerHTML = "";
-            data.forEach(initiative => {
-                initiativesTable.innerHTML += `
-                    <tr>
-                        <td>${initiative._id}</td>
-                        <td>${initiative.title}</td>
-                        <td>${initiative.description}</td>
-                        <td>${initiative.category}</td>
-                        <td>${initiative.startDate.slice(0, 10)}</td>
-                        <td>
-                            <button class="btn-primary" onclick="editInitiative('${initiative._id}')">Editar</button>
-                            <button class="btn-danger" onclick="deleteInitiative('${initiative._id}')">Eliminar</button>
-                        </td>
-                    </tr>
-                `;
-            });
-        } catch (error) {
-            console.error(error.message);
-        }
+            initiativesTable.innerHTML = "";
+            data.forEach(initiative => {
+                initiativesTable.innerHTML += `
+                    <tr>
+                        <td>${initiative.title}</td>
+                        <td>${initiative.description}</td>
+                        <td>${initiative.category}</td>
+                        <td>${initiative.startDate.slice(0, 10)}</td>
+                        <td class="action-buttons">
+                            <button class="icon-button edit-button" onclick="editInitiative('${initiative._id}')">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path d="M180-180h44l443-443-44-44-443 443v44Zm614-486L666-794l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248-120H120v-128l504-504 128 128Zm-107-21-22-22 44 44-22-22Z"/>
+                                </svg>
+                            </button>
+                            <button class="icon-button delete-button" onclick="deleteInitiative('${initiative._id}')">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        } catch (error) {
+            console.error(error.message);
+        }
     };
 
     const saveInitiative = async (e) => {
