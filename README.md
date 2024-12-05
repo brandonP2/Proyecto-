@@ -1,4 +1,4 @@
-# Proyecto: Sistema de Gestión
+# Proyecto: Sistema de creación de iniciativas verdes
 
 Este repositorio contiene un sistema modular para la gestión de recursos, utilizando una arquitectura cliente-servidor. El sistema está dividido en frontend y backend para mantener una separación clara de responsabilidades.
 
