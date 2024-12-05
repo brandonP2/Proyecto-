@@ -5,7 +5,11 @@ const initiativeSchema = new mongoose.Schema({
     description: { type: String, required: true },
     category: { type: String, required: true },
     startDate: { type: Date, required: true },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true } // Relación con usuario
+    user: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "User", 
+        required: true 
+    }
 });
 
 module.exports = mongoose.model("Initiative", initiativeSchema);
