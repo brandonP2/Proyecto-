@@ -4,11 +4,11 @@ El backend es la parte lógica de la aplicación que maneja las solicitudes, la 
 
 ## **Funcionamiento**
 
-El servidor backend está configurado en el archivo `server.js`, donde se inicializa Express y se conecta con la base de datos mediante `db.js`. Las rutas de la API están divididas en dos grupos principales: `userRoutes.js` para la gestión de usuarios y `initiativesRoutes.js` para las iniciativas. Estas rutas delegan las tareas específicas a sus respectivos controladores.
+El servidor backend está configurado en el archivo `server.js`, donde se inicializa Express y se conecta con la base de datos mediante `server.js`. Las rutas de la API están divididas en dos grupos principales: `userRoutes.js` para la gestión de usuarios y `initiativesRoutes.js` para las iniciativas. Estas rutas delegan las tareas específicas a sus respectivos controladores.
 
 ### **Conexión con la Base de Datos**
 
-La conexión con MongoDB se realiza a través del archivo `db.js`, utilizando **Mongoose**. Este archivo maneja los errores de conexión y asegura que el servidor no se inicie si no se logra conectar correctamente a la base de datos.
+La conexión con MongoDB se realiza a través del archivo `server.js`, utilizando **Mongoose**. Este archivo maneja los errores de conexión y asegura que el servidor no se inicie si no se logra conectar correctamente a la base de datos.
 
 ### **Rutas del Backend**
 
